@@ -1,12 +1,54 @@
+
+# Explain how can you submit a form using JavaScript?
+To submit a form using JavaScript use document.form[0].submit();
+```js
+document.form[0].submit();
+```
+
 # What are JavaScript Data Types?
 
 Following are the JavaScript Data types:
+<ul>
+  <li>Number</li>
+  <li>String</li>
+  <li>Boolean</li>
+  <li>Object</li>
+  <li>Undefined</li>
+</ul>
 
-Number
-String
-Boolean
-Object
-Undefined
+# Closures
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time
+
+A closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function’s variables — a scope chain.
+The closure has three scope chains:
+<ul>
+<li>it has access to its own scope — variables defined between its curly brackets</li>
+<li>it has access to the outer function’s variables</li>
+<li>it has access to the global variables</li>
+</ul>
+```js
+function outer() {
+   var b = 10;
+   function inner() {
+        
+         var a = 20; 
+         console.log(a+b);
+    }
+   return inner;
+}
+```
+
+# Describe the properties of an anonymous function in JavaScript?
+A function that is declared without any named identifier is known as an anonymous function. In general, an anonymous function is inaccessible after its declaration.
+
+Anonymous function declaration -
+```js
+var anon = function() {
+	alert('I am anonymous');
+};
+anon();
+```
+
 
 # What are global variables? How are these variable declared and what are the problems associated with using them?
 
@@ -21,8 +63,128 @@ The problems that are faced by using global variables are the clash of variable 
 # What is 'this' keyword in JavaScript?
 'This' keyword refers to the object from where it was called.
 
-# Explain the working of timers in JavaScript? Also elucidate the drawbacks of using the timer, if any?
+# Does JavaScript support automatic type conversion?
+Yes JavaScript does support automatic type conversion, it is the common way of type conversion used by JavaScript developers
 
+# How can the style/class of an element be changed?
+
+It can be done in the following way:
+
+document.getElementById("myText").style.fontSize = "20";
+or
+document.getElementById("myText").className = "anyclass";
+
+# Explain how to detect the operating system on the client machine?
+
+In order to detect the operating system on the client machine, the navigator.platform string (property) should be used.
+
+# What is the function of delete operator?
+
+The delete keyword is used to delete the property as well as its value.
+
+Example
+```js
+var student= {age:20, batch:"ABC"};
+delete student.age;
+```
+# What is the data type of variables of in JavaScript?
+
+All variables in the JavaScript are object data types.
+
+# What is the difference between an alert box and a confirmation box?
+
+An alert box displays only one button which is the OK button.
+
+But a Confirmation box displays two buttons namely OK and cancel.
+
+# What are escape characters?
+
+Escape characters (Backslash) is used when working with special characters like single quotes, double quotes, apostrophes and ampersands. Place backslash before the characters to make it display.
+
+Example:
+```js
+document.write "I m a "good" boy"
+document.write "I m a \"good\" boy"
+```
+
+# What are JavaScript Cookies?
+
+Cookies are the small test files stored in a computer and it gets created when the user visits the websites to store information that they need. Example could be User Name details and shopping cart information from the previous visits.
+
+# Whether JavaScript has concept level scope?
+
+No. JavaScript does not have concept level scope. The variable declared inside the function has scope inside the function.
+
+# What is break and continue statements?
+
+Break statement exits from the current loop.
+
+Continue statement continues with next statement of the loop.
+
+# How generic objects can be created?
+
+Generic objects can be created as:
+```js
+var I = new object();
+```
+# What is the use of type of operator?
+'Typeof' is an operator which is used to return a string description of the type of a variable.
+
+# Which keywords are used to handle exceptions?
+Try… Catch---finally is used to handle exceptions in the JavaScript
+```js
+Try{
+	Code
+}
+Catch(exp){
+	Code to throw an exception
+}
+Finally{
+	Code runs either it finishes successfully or after catch
+}
+```
+# Which keyword is used to print the text in the screen?
+document.write("Welcome") is used to print the text – Welcome in the screen.
+
+# What is the use of blur function?
+Blur function is used to remove the focus from the specified object.
+
+# What is variable typing?
+Variable typing is used to assign a number to a variable and then assign string to the same variable. Example is as follows:
+```js
+i= 8;
+i="john";
+```
+
+# What are the different types of errors in JavaScript?
+There are three types of errors:
+<ul>
+<li>Load time errors: Errors which come up when loading a web page like improper syntax errors are known as Load time errors and it generates the errors dynamically.</li>
+<li>Run time errors: Errors that come due to misuse of the command inside the HTML language.</li>
+<li>Logical Errors: These are the errors that occur due to the bad logic performed on a function which is having different operation.</li>
+<ul>
+  
+# What is the use of Push method in JavaScript?
+The push method is used to add or append one or more elements to the end of an Array. Using this method, we can append multiple elements by passing multiple arguments
+
+# What is unshift method in JavaScript?
+Unshift method is like push method which works at the beginning of the array. This method is used to prepend one or more elements to the beginning of the array.
+
+# What is the way to get the status of a CheckBox?
+The status can be acquired as follows -
+
+alert(document.getElementById('checkbox1').checked);
+
+If the CheckBox will be checked, this alert will return TRUE.
+
+# Explain window.onload and onDocumentReady?
+The onload function is not run until all the information on the page is loaded. This leads to a substantial delay before any code is executed.
+
+onDocumentReady loads the code just after the DOM is loaded. This allows early manipulation of the code.
+
+
+
+# Explain the working of timers in JavaScript? Also elucidate the drawbacks of using the timer, if any?
 Timers are used to execute a piece of code at a set time or also to repeat the code in a given interval of time. This is done by using the functions <b>setTimeout</b>, <b>setInterval</b> and <b>clearInterval</b>.
 
 The <b>setTimeout(function, delay)</b> function is used to start a timer that calls a particular function after the mentioned delay. The <b>setInterval(function, delay)</b> function is used to repeatedly execute the given function in the mentioned delay and only halts when cancelled. The <b>clearInterval(id)</b> function instructs the timer to stop.
