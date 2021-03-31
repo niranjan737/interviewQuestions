@@ -26,6 +26,7 @@ The closure has three scope chains:
 <li>it has access to the outer function’s variables</li>
 <li>it has access to the global variables</li>
 </ul>
+
 ```js
 function outer() {
    var b = 10;
@@ -36,6 +37,7 @@ function outer() {
     }
    return inner;
 }
+
 ```
 
 # Describe the properties of an anonymous function in JavaScript?
