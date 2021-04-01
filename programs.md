@@ -1,5 +1,6 @@
 # JavaScript Program to Reverse a String
 <h6>Example 1: Reverse a String Using for Loop</h6>
+
 ```js
 // program to reverse a string
 function reverseString(str) {
@@ -18,13 +19,16 @@ const string = prompt('Enter a string: ');
 const result = reverseString(string);
 console.log(result);
  ```
+ 
  <b>Output</b>
+ 
  ```js
  Enter a string: hello world
 `dlrow olleh
  ```
  
  <h6>Example 2: Reverse a String Using built-in Methods</h6>
+ 
  ```js
  // program to reverse a string
 function reverseString(str) {
@@ -50,6 +54,7 @@ console.log(result);
 ```
 
 # Quick sort
+
 ```js
 var items = [5,3,7,6,2,9];
 function swap(items, leftIndex, rightIndex){
@@ -96,6 +101,7 @@ console.log(sortedArray); //prints [2,3,5,6,7,9]
 ```
 
 # Bubble Sort
+
 ```js
 let bubbleSort = (inputArr) => {
     let len = inputArr.length;
