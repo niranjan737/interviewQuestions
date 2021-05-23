@@ -73,6 +73,7 @@ Working with JavaScript “this” keyword can be tricky. Not knowing the backgr
 1) “this” always refers to an object.
 2> “this” refers to an object which calls the function it contains.
 3) In the global context “this” refers to either window object or is undefined if the ‘strict mode’ is used.
+
 ```js
 var car = { 
     registrationNumber: "GA12345",
@@ -83,28 +84,36 @@ var car = {
     }
 }
 ```
+
 The above will work perfectly fine as long as we use it this way:
+
 ```js
 car.displayDetails(); // GA12345 Toyota
 ```
+
 But what if we want to borrow a method?
+
 ```js
 var myCarDetails =  car.displayDetails;
 myCarDetails();
 ```
+
 Well, this won’t work as the “this” will be now assigned to the global context which doesn’t have neither the registrationNumber nor the brand property.
 
 The bind() Method
 For such cases we can use the ECMAScript 5 bind() method of the Function.prototype property. This means bind() can be used by every single function.
+
 ```js
 var myCarDetails = car.displayDetails.bind(car); 
 myCarDetails(); // GA12345 Toyota
 ```
+
 The bind() method creates a new function where “this” refers to the parameter in the parenthesis in the above case “car”. This way the bind() method enables calling a function with a specified “this” value.
 
 What if we would like to pass a parameter to the displayDetails function? We can use the bind method again. The following argument of the bind() method will provide an argument to the function bind() is called on.
 
 Let me rewrite the car object:
+
 ```js
 var car = { 
     registrationNumber: "GA12345",
@@ -115,6 +124,7 @@ var car = {
     }
 }
 ```
+
 Example of passing arguments with bind():
 
 var myCarDetails = car.displayDetails.bind(car, "Vivian"); // Vivian, this is your car: GA12345 Toyota
@@ -122,6 +132,7 @@ call() and apply() methods
 Similar but slightly different usage provide the call() and apply() methods which also belong to the Function.prototype property.
 
 This time there is a car object without the displayDetails function, which is located in the global context.
+
 ```js
 var car = { 
     registrationNumber: "GA12345",
@@ -133,17 +144,20 @@ function displayDetails(ownerName) {
 }
 ```
 We can use the apply() function:
+
 ```js
 displayDetails.apply(car, ["Vivian"]); // Vivian, this is your car: GA12345 Toyota
 Or
 
 displayDetails.call(car, "Vivian"); // Vivian, this is your car: GA12345 Toyota
 ```
+
 <b>Note:</b> that when using the apply() function the parameter must be placed in an array. Call() accepts both an array of parameters and a parameter itself. Both are great tools for borrowing functions in JavaScript.
 
 bind(), call() and apply() functions can make your life easier when you need to set the value of ‘this’. Hope the post was helpful.
 
 # Learning Exercise !!!
+
 ```js
 var func = function() {
     console.log(this)
@@ -236,10 +250,12 @@ In order to detect the operating system on the client machine, the navigator.pla
 The delete keyword is used to delete the property as well as its value.
 
 Example
+
 ```js
 var student= {age:20, batch:"ABC"};
 delete student.age;
 ```
+
 # What is the data type of variables of in JavaScript?
 
 All variables in the JavaScript are object data types.
@@ -255,6 +271,7 @@ But a Confirmation box displays two buttons namely OK and cancel.
 Escape characters (Backslash) is used when working with special characters like single quotes, double quotes, apostrophes and ampersands. Place backslash before the characters to make it display.
 
 Example:
+
 ```js
 document.write "I m a "good" boy"
 document.write "I m a \"good\" boy"
@@ -277,14 +294,17 @@ Continue statement continues with next statement of the loop.
 # How generic objects can be created?
 
 Generic objects can be created as:
+
 ```js
 var I = new object();
 ```
+
 # What is the use of type of operator?
 'Typeof' is an operator which is used to return a string description of the type of a variable.
 
 # Which keywords are used to handle exceptions?
 Try… Catch---finally is used to handle exceptions in the JavaScript
+
 ```js
 Try{
 	Code
@@ -296,6 +316,7 @@ Finally{
 	Code runs either it finishes successfully or after catch
 }
 ```
+
 # Which keyword is used to print the text in the screen?
 document.write("Welcome") is used to print the text – Welcome in the screen.
 
@@ -304,6 +325,7 @@ Blur function is used to remove the focus from the specified object.
 
 # What is variable typing?
 Variable typing is used to assign a number to a variable and then assign string to the same variable. Example is as follows:
+
 ```js
 i= 8;
 i="john";
@@ -375,6 +397,7 @@ There are two types of data types in JavaScript:
 </p>
 
 # How to use external JavaScript file?
+
 ```js 
   <script type="text/javascript" src="message.js"></script>  
  ```
@@ -413,19 +436,24 @@ The == operator checks equality only whereas === checks equality, and data type,
 
 # How to write normal text code using JavaScript dynamically?
 The innerText property is used to write the simple text using JavaScript dynamically. Let's see a simple example:
+
 ```js 
 document.getElementById('mylocation').innerText="This is text using JavaScript";   
 ```
 
 # What is the difference between undefined value and null value?
 Undefined value: A value that is not defined and has no keyword is known as undefined value. For example:
+
 ```js  
   int number;//Here, a number has an undefined value.  
  ```
+ 
 Null value: A value that is explicitly specified by the keyword "null" is known as a null value. For example:
+
 ```js  
   String str=null;//Here, str has a null value.
  ```
+ 
 # What is the difference between View state and Session state?
 "View state" is specific to a page in a session whereas "Session state" is specific to a user or browser that can be accessed across all pages in the web application.
 
@@ -437,6 +465,7 @@ Null value: A value that is explicitly specified by the keyword "null" is known 
 <ul>
 
 Example of alert() in JavaScript
+	
 ```bah
 <script type="text/javascript">  
 function msg(){  
@@ -447,6 +476,7 @@ function msg(){
 ```
 
 Example of confirm() in JavaScript
+	
 ```bah
 <script type="text/javascript">  
 function msg(){  
@@ -464,6 +494,7 @@ alert("cancel");
 <input type="button" value="delete record" onclick="msg()"/>  
 ```
 Example of prompt() in JavaScript
+	
 ```bah
 <script type="text/javascript">  
 function msg(){  
