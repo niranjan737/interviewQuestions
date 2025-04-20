@@ -134,9 +134,33 @@ for (let i = 1; i <= number; i++) {
 }
 ```
 
+# Convert multi dimentional array to single dimention (Array Flat) without using library function
+
+```js
+var a = [1, [2, 3], [4, 5], 6, [7, 8, [9, [10, 11]]]];
+
+function flatten(arr){
+    return arr.reduce((acc, item)=>{
+      if(Array.isArray(item)){
+        return acc.concat(flatten(item))
+      }
+      
+      return acc.concat(item);
+    }, []);
+}
+
+console.log("Result : ", flatten(a));
+```
+
+# Using Array.prototype.flat() (built-in function, ES2019+)
+const nestedArray = [1, [2, 3], [4, 5], 6, [7, 8, [9, [10, 11]]]];
+const flatArray = nestedArray.flat(Infinity); // Infinity to flatten any depth
+console.log(flatArray); 
+
+
 <b>Output</b>
 
 
 ```js
-0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+Result :  [1, 2, 3, 4,  5, 6, 7, 8, 9, 10, 11]
 ```
