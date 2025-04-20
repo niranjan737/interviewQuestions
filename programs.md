@@ -153,10 +153,11 @@ console.log("Result : ", flatten(a));
 ```
 
 # Using Array.prototype.flat() (built-in function, ES2019+)
+```js
 const nestedArray = [1, [2, 3], [4, 5], 6, [7, 8, [9, [10, 11]]]];
 const flatArray = nestedArray.flat(Infinity); // Infinity to flatten any depth
 console.log(flatArray); 
-
+```
 
 <b>Output</b>
 
